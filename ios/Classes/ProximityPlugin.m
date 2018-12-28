@@ -4,7 +4,8 @@
 @implementation ProximityPlugin
 
     + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-
+        ProximityPlugin* instance = [[ProximityPlugin alloc] init];
+        
         FLTProximityStreamHandler* proximityStreamHandler = [[FLTProximityStreamHandler alloc] init];
         FlutterEventChannel* proximityChannel = [FlutterEventChannel eventChannelWithName:@"plugins.flutter.io/proximity"
         binaryMessenger:[registrar messenger]];
