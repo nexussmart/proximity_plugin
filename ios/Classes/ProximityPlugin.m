@@ -21,7 +21,7 @@
         if ([@"stop" isEqualToString:call.method]) {
             UIDevice *device = [UIDevice currentDevice];
             device.proximityMonitoringEnabled = NO;
-            result("");
+            result(@"");
         } else {
             result(FlutterMethodNotImplemented);
         }
