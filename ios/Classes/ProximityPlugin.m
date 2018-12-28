@@ -10,6 +10,21 @@
         binaryMessenger:[registrar messenger]];
         [proximityChannel setStreamHandler:proximityStreamHandler];
 
+        FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@"plugins.flutter.io/proximity"
+        binaryMessenger:[registrar messenger]];
+        ProximityPlugin* instance = [[ProximityPlugin alloc] init];
+        [registrar addMethodCallDelegate:instance channel:channel];
+
+    }
+
+    - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
+        if ([@"stop" isEqualToString:call.method]) {
+            UIDevice *device = [UIDevice currentDevice];
+            device.proximityMonitoringEnabled = NO;
+            result();
+        } else {
+            result(FlutterMethodNotImplemented);
+        }
     }
 
 @end

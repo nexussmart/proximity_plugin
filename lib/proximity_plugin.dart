@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 
 const EventChannel _proximityEventChannel =
 const EventChannel('plugins.flutter.io/proximity');
+const MethodChannel _channel = const MethodChannel('plugins.flutter.io/proximity');
 
 class ProximityEvent {
   /// Proximity force along the x axis (including gravity) measured in m/s^2.
@@ -31,4 +32,8 @@ Stream<ProximityEvent> get proximityEvents {
         .map((dynamic event) => _listToProximityEvent(event));
   }
   return _proximityEvents;
+}
+
+void stopProximity() async {
+  await _channel.invokeMethod('stop');
 }
