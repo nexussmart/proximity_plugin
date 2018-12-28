@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 
 const EventChannel _proximityEventChannel =
 const EventChannel('plugins.flutter.io/proximity');
-const MethodChannel _channel = const MethodChannel('plugins.flutter.io/proximity');
+const MethodChannel _channel = const MethodChannel('plugins.flutter.io/proximitys');
 
 class ProximityEvent {
   /// Proximity force along the x axis (including gravity) measured in m/s^2.

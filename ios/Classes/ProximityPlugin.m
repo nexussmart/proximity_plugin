@@ -10,7 +10,7 @@
         binaryMessenger:[registrar messenger]];
         [proximityChannel setStreamHandler:proximityStreamHandler];
 
-        FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@"plugins.flutter.io/proximity"
+        FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@"plugins.flutter.io/proximitys"
         binaryMessenger:[registrar messenger]];
         ProximityPlugin* instance = [[ProximityPlugin alloc] init];
         [registrar addMethodCallDelegate:instance channel:channel];
