@@ -45,7 +45,7 @@
 
         NSLog(@"proximityvalue= %@",proximityValue);
 
-        eventSink(proximityValue);
+        //eventSink(proximityValue);
 
 
         if(state)
